@@ -1,61 +1,55 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 
+// Hero dan gambar utama
+import heroImage from "@/assets/profile_hero.png";
+import dpIcon from "@/assets/icons/dp_icon2.png";
+
+// Icon layananCards
+import icon1 from "@/assets/icons/icon1.png";
+import icon2 from "@/assets/icons/icon2.png";
+import icon3 from "@/assets/icons/icon3.png";
+import icon4 from "@/assets/icons/icon4.png";
+import icon5 from "@/assets/icons/icon5.png";
+import icon6 from "@/assets/icons/icon6.png";
+import icon7 from "@/assets/icons/icon7.png";
+import icon8 from "@/assets/icons/icon8.png";
+
+// Icon layanan utama
+import icons1 from "@/assets/icons/icons1.png";
+import icons2 from "@/assets/icons/icons2.png";
+import icons3 from "@/assets/icons/icons3.png";
+import icons4 from "@/assets/icons/icons4.png";
+
+// Dokter
+import doctor1 from "@/assets/doctor1.png";
+import doctor2 from "@/assets/doctor2.png";
+import doctor3 from "@/assets/doctor3.png";
+
 const layananCards = [
-  { icon: "/src/assets/icons/icon1.png", title: "Konsultasi & Check Up" },
-  { icon: "/src/assets/icons/icon2.png", title: "Tenaga Medis Profesional" },
-  { icon: "/src/assets/icons/icon3.png", title: "Gawat Darurat Tersedia 24/7" },
-  { icon: "/src/assets/icons/icon4.png", title: "Pengobatan Yang Tepat" },
-  { icon: "/src/assets/icons/icon5.png", title: "Dokter Spesialis" },
-  { icon: "/src/assets/icons/icon6.png", title: "Fasilitas Nyaman" },
-  { icon: "/src/assets/icons/icon7.png", title: "Rekam Medis Elektronik" },
-  { icon: "/src/assets/icons/icon8.png", title: "Kepuasan Pasien Prioritas Kami" },
+  { icon: icon1, title: "Konsultasi & Check Up" },
+  { icon: icon2, title: "Tenaga Medis Profesional" },
+  { icon: icon3, title: "Gawat Darurat Tersedia 24/7" },
+  { icon: icon4, title: "Pengobatan Yang Tepat" },
+  { icon: icon5, title: "Dokter Spesialis" },
+  { icon: icon6, title: "Fasilitas Nyaman" },
+  { icon: icon7, title: "Rekam Medis Elektronik" },
+  { icon: icon8, title: "Kepuasan Pasien Prioritas Kami" },
 ];
 
 const layanan = [
-  {
-    icon: "/src/assets/icons/icons1.png",
-    title: "Rawat Jalan",
-    desc: "Kami menyediakan berbagai layanan kesehatan rawat jalan baik jiwa maupun non jiwa",
-    link: "Poliklinik",
-  },
-  {
-    icon: "/src/assets/icons/icons2.png",
-    title: "Rawat Inap",
-    desc: "Kami menyediakan layanan rawat inap baik untuk layanan jiwa maupun non jiwa",
-    link: "Rawat Inap",
-  },
-  {
-    icon: "/src/assets/icons/icons3.png",
-    title: "Penunjang Medis",
-    desc: "Kami menyediakan berbagai layanan penunjang medis untuk menunjang pelayanan kesehatan kami",
-    link: "Layanan Penunjang",
-  },
-  {
-    icon: "/src/assets/icons/icons4.png",
-    title: "IGD",
-    desc: "Kami menyediakan pelayanan kasus gawat darurat baik jiwa maupun non jiwa",
-    link: "Instalasi Gawat Darurat",
-  },
+  { icon: icons1, title: "Rawat Jalan", desc: "Kami menyediakan berbagai layanan kesehatan rawat jalan baik jiwa maupun non jiwa", link: "Poliklinik" },
+  { icon: icons2, title: "Rawat Inap", desc: "Kami menyediakan layanan rawat inap baik untuk layanan jiwa maupun non jiwa", link: "Rawat Inap" },
+  { icon: icons3, title: "Penunjang Medis", desc: "Kami menyediakan berbagai layanan penunjang medis untuk menunjang pelayanan kesehatan kami", link: "Layanan Penunjang" },
+  { icon: icons4, title: "IGD", desc: "Kami menyediakan pelayanan kasus gawat darurat baik jiwa maupun non jiwa", link: "Instalasi Gawat Darurat" },
 ];
 
 const doctors = [
-  {
-    name: "Mega Nilam Sari",
-    specialization: "Dokter, Spesialis Kedokteran Jiwa",
-    image: "/src/assets/doctor1.png",
-  },
-  {
-    name: "Christie Indira",
-    specialization: "Dokter, Spesialis Kedokteran Jiwa",
-    image: "/src/assets/doctor2.png",
-  },
-  {
-    name: "Sista Diahlaksmi",
-    specialization: "Dokter, Spesialis Kedokteran Jiwa",
-    image: "/src/assets/doctor3.png",
-  },
+  { name: "Mega Nilam Sari", specialization: "Dokter, Spesialis Kedokteran Jiwa", image: doctor1 },
+  { name: "Christie Indira", specialization: "Dokter, Spesialis Kedokteran Jiwa", image: doctor2 },
+  { name: "Sista Diahlaksmi", specialization: "Dokter, Spesialis Kedokteran Jiwa", image: doctor3 },
 ];
+
 export default function Profile() {
   const [play, setPlay] = useState(false);
   const videoId = "fo6uPgx3D1M";
@@ -63,14 +57,13 @@ export default function Profile() {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('/src/assets/profile_hero.png')" }}>
+      <div className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white text-center px-4">
           <h1 className="text-3xl font-bold max-w-4xl">Rumah Sakit Jiwa Menur merupakan satu-satunya rumah sakit jiwa milik Pemerintah Provinsi Jawa Timur.</h1>
           <p className="mt-4 text-sm max-w-xl">Saat ini Rumah Sakit Jiwa Menur telah membuka layanan Non Jiwa yang didukung oleh tenaga medis yang profesional.</p>
         </div>
       </div>
 
-      {/* Konten Profil */}
       <div className="px-6 py-12 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">Rumah sakit jiwa kelas A pendidikan dengan pelayanan prima.</h2>
 
@@ -80,7 +73,6 @@ export default function Profile() {
           <li>Pelayanan pendidikan, pelatihan, dan penelitian kesehatan jiwa yang bermutu dan beretika.</li>
         </ul>
 
-        {/* Video */}
         <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg mb-16">
           {play ? (
             <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} className="w-full h-full" allow="autoplay; encrypted-media" allowFullScreen />
@@ -98,39 +90,6 @@ export default function Profile() {
           )}
         </div>
 
-        {/* Sejarah RS */}
-        <div className="max-w-3xl mx-auto mb-10">
-          <h3 className="text-2xl font-bold text-blue-900 mb-4">Sejarah Singkat Rumah Sakit Jiwa Menur</h3>
-          <p className="text-gray-600">
-            RS Jiwa Menur diresmikan oleh Gubernur KDH TK I Jawa Timur (Bapak Soenandar Prijosoedarmo) tahun 1977 dengan jumlah tempat tidur sebanyak 100. Dipimpin oleh dr. R. Moeljono Notosoedirdjo, Sp.S., Sp.KJ., MPH.
-          </p>
-          <div className="flex items-center gap-2 mt-4 font-semibold text-blue-900">
-            <a href="#" className="hover:underline">
-              Selengkapnya
-            </a>
-            <div className="bg-blue-900 text-white rounded-full p-1">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 3l6 6-6 6-1.41-1.41L13.17 10 8.59 5.41 10 3z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mb-10">
-          <p className="italic text-sm text-gray-700">“Deskripsi Tugas dan Fungsi Pokok RS berdasarkan Pergub Nomor 110 Tahun 2021”</p>
-          <div className="flex justify-center gap-2 mt-2 font-semibold text-blue-900">
-            <a href="#" className="hover:underline">
-              Lihat Pergub
-            </a>
-            <div className="bg-blue-900 text-white rounded-full p-1">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 3l6 6-6 6-1.41-1.41L13.17 10 8.59 5.41 10 3z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Grid Card */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {layananCards.map((item, idx) => (
             <div key={idx} className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
@@ -163,17 +122,13 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Teal Section */}
         <div className="bg-teal-300 relative left-1/2 mb-20 w-screen -translate-x-1/2 py-16 mt-[-2px]">
           <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-start gap-4">
-              <img src="/src/assets/icons/dp_icon2.png" alt="Ilustrasi RS" className="w-24 h-24 " />
+              <img src={dpIcon} alt="Ilustrasi RS" className="w-24 h-24 " />
               <div className="px-4">
                 <h3 className="text-lg md:text-2xl font-bold text-blue-900 mb-2">Layanan Kesehatan Jiwa dan Non Jiwa Untuk Keluarga Anda!</h3>
-                <p className="text-sm text-blue-900 max-w-xl">
-                  Memberikan pelayanan kesehatan jiwa dan non-jiwa dengan meningkatkan kualitas hidup melalui kesehatan yang lebih baik. Kami telah menerapkan protokol untuk melindungi pasien dan staf kami sambil terus memberikan perawatan
-                  yang diperlukan secara medis.
-                </p>
+                <p className="text-sm text-blue-900 max-w-xl">Memberikan pelayanan kesehatan jiwa dan non-jiwa dengan meningkatkan kualitas hidup melalui kesehatan yang lebih baik.</p>
               </div>
             </div>
             <a href="#" className="mt-4 md:mt-0 inline-flex items-center gap-2 bg-blue-900 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-105 transition">
