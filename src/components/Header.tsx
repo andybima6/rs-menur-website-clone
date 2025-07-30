@@ -92,10 +92,22 @@ const Header = () => {
             <div className="lg:hidden py-4 border-t">
               <div className="flex flex-col space-y-3">
                 {menuItems.map((item, index) => (
-                  <a key={index} href={item.href} className="text-gray-700 hover:text-healthcare-blue transition-colors duration-200 font-medium py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                    {item.label}
-                  </a>
+                  <div key={index} className="flex flex-col">
+                    <a href={item.href} className="text-gray-700 hover:text-healthcare-blue transition-colors duration-200 font-medium py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                      {item.label}
+                    </a>
+                    {item.submenu && (
+                      <div className="ml-4 flex flex-col space-y-1">
+                        {item.submenu.map((subitem, subindex) => (
+                          <a key={subindex} href={subitem.href} className="text-gray-600 text-sm hover:text-healthcare-blue transition" onClick={() => setIsMobileMenuOpen(false)}>
+                            {subitem.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
+
                 <div className="pt-4 border-t">
                   <p className="text-healthcare-blue font-bold">(+62)81136333120 (chat only)</p>
                 </div>
