@@ -46,11 +46,11 @@ const articles = [
 ];
 const Home = () => {
   return (
-    <section>
+    <section className="p-12">
       <div className="min-h-screen">
         <img src="/src/assets/home_section.png" alt="home" />
       </div>
-      <div className="flex flex-row items-center justify-center py-12 mt-8 gap-12">
+      <div className="flex flex-col lg:flex-row items-center justify-center py-12 mt-8 gap-12">
         {features.map((feature, index) => (
           <div key={index} className="flex flex-col items-center text-center space-y-3">
             <div className="rounded-full p-4">

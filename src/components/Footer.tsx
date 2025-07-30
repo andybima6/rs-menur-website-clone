@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin, Ambulance } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hospitalLogo from "@/assets/hospital-logo.png";
+import hospitalLogo from "@/assets/icons/Logo.png";
 
 const Footer = () => {
   return (
